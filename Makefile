@@ -65,7 +65,6 @@ SRCS_FILES =		ft_memset	\
 					free_split	\
 
 INCLUDES_FILES =	libft	\
-					dblist	\
 
 SOURCE_DIR =	./SOURCES/
 INCLUDES_DIR =	./INCLUDES/
@@ -99,4 +98,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+norminette : $(SOURCES) $(INCLUDES)
+	norminette $(SOURCES) $(INCLUDES)
+
+.PHONY: all clean fclean re norminette
