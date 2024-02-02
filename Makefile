@@ -63,6 +63,11 @@ SRCS_FILES =		ft_memset	\
 					putnbr_unsigned_fd	\
 					ft_free	\
 					free_split	\
+					destroy_htab	\
+					hash_tab_utils	\
+					hash_tab	\
+					hash	\
+					print_htab	\
 
 INCLUDES_FILES =	libft	\
 
