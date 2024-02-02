@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 11:08:24 by cdeville          #+#    #+#             */
-/*   Updated: 2024/01/27 12:14:58 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/02/02 11:50:11 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	free_split(char **split)
 	int	i;
 
 	i = 0;
-	if (!split || !*split)
+	if (!split)
 		return ;
 	while (split[i])
 	{
