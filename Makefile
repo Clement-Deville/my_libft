@@ -68,6 +68,7 @@ SRCS_FILES =		ft_memset	\
 					hash_tab	\
 					hash	\
 					print_htab	\
+					ft_abs	\
 
 INCLUDES_FILES =	libft	\
 
@@ -83,7 +84,7 @@ NAME = libft.a
 
 CC = cc
 
-CC_FLAGS = -Wall -Wextra -Werror
+CC_FLAGS = -Wall -Wextra -Werror -g
 
 $(OBJS_DIR)%.o : $(SOURCE_DIR)%.c
 	@mkdir -p $(OBJS_DIR)

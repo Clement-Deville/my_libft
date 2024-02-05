@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:55:59 by cdeville          #+#    #+#             */
-/*   Updated: 2024/02/02 14:23:55 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/02/05 15:57:11 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
+long long		ft_abs(long long number);
 
 # define HEXA_BASE_UP "0123456789ABCDEF"
 # define HEXA_BASE_LOW "0123456789abcdef"
