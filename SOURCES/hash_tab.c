@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:23:24 by cdeville          #+#    #+#             */
-/*   Updated: 2024/02/02 14:28:54 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/02/28 09:28:31 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 static t_hash	*mem_exit(t_hash *htab, int size)
 {
-	ft_printf("Memory alloction fail!\n");
 	destroy_htab(htab, size);
 	return (NULL);
 }
 
 static t_hash	*dup_exit(char *key, t_hash *htab, int size)
 {
-	ft_printf("Find a duplicate of key: %s.\n", key);
+	(void)key;
 	destroy_htab(htab, size);
 	return (NULL);
 }

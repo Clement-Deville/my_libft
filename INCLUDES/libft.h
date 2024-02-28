@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:55:59 by cdeville          #+#    #+#             */
-/*   Updated: 2024/02/05 15:57:11 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/02/28 19:21:28 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <unistd.h>
+# include <string.h>
 # include <stdlib.h>
 # include <stdarg.h>
 
@@ -122,7 +123,7 @@ typedef struct s_dblist
 
 t_dblist		*ft_dblstnew(void *content);
 t_dblist		*ft_dblstadd_after(t_dblist *actual, t_dblist *new);
-void			ft_dblstadd_before(t_dblist *actual, t_dblist *new);
+t_dblist		*ft_dblstadd_before(t_dblist *actual, t_dblist *new);
 void			ft_dblstdelone(t_dblist *dblst, void (*del)(void*));
 void			ft_dblstclear(t_dblist **lst, void (*del)(void*));
 t_dblist		*ft_dblstfirst(void *content);
@@ -147,5 +148,18 @@ void			print_efficiency(t_hash *htab, int size);
 int				handle_collision(t_hash *htab, char *key);
 t_hash			*create_htab(int size, char *tab[],
 					unsigned int (*hash_f)(char*, int));
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 16
+# endif
+
+char			*get_next_line(int fd);
+size_t			ft_strlen(const char *s);
+void			*ft_memmove(void *dest, const void *src, size_t n);
+void			*ft_memcpy(void *dest, const void *src, size_t n);
+char			*ft_strjoin_edited(char *s1, char const *s2);
+char			*fill_line(int fd, char *line, char **stock);
+t_bool			isline_over(char *str);
+void			trim_begining(char *str);
 
 #endif

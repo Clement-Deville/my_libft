@@ -69,6 +69,8 @@ SRCS_FILES =		ft_memset	\
 					hash	\
 					print_htab	\
 					ft_abs	\
+					get_next_line	\
+					get_next_line_utils	\
 
 INCLUDES_FILES =	libft	\
 
