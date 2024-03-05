@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   is_decimal.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 13:34:59 by cdeville          #+#    #+#             */
-/*   Updated: 2024/03/05 11:24:31 by cdeville         ###   ########.fr       */
+/*   Created: 2024/03/04 14:50:17 by cdeville          #+#    #+#             */
+/*   Updated: 2024/03/04 14:54:53 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../INCLUDES/libft.h"
 
 static int	ft_isspace(int c)
 {
@@ -24,38 +26,39 @@ static int	ft_isnum(int c)
 	return (0);
 }
 
-int	ft_atoi(const char *nptr)
+static t_bool	is_valid(char end, t_bool contain_int, t_bool contain_deci)
 {
-	int	nb;
-	int	i;
-	int	sign;
-
-	i = 0;
-	nb = 0;
-	sign = 1;
-	while (ft_isspace(nptr[i]))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		if (nptr[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	while (ft_isnum(nptr[i]))
-	{
-		nb = nb * 10 + nptr[i] - 48;
-		i++;
-	}
-	return (nb * sign);
+	if (end == 0 && contain_int == TRUE && contain_deci == TRUE)
+		return (TRUE);
+	else
+		return (FALSE);
 }
 
-// #include <stdio.h>
-// #include <stdlib.h>
+t_bool	is_decimal(char *arg)
+{
+	int		i;
+	t_bool	contain_int;
+	t_bool	contain_deci;
 
-// int	main(void)
-// {
-// 	char	*str = "15+46";
-// 	printf("%d\n", ft_atoi(str));
-// 	printf("%d\n", atoi(str));
-// 	return (0);
-// }
+	i = 0;
+	contain_int = FALSE;
+	contain_deci = FALSE;
+	while (ft_isspace(arg[i]))
+		i++;
+	if (arg[i] == '-' || arg[i] == '+')
+	i++;
+	while (ft_isnum(arg[i]))
+	{
+		contain_int = TRUE;
+		i++;
+	}
+	if (arg[i] && arg[i++] == '.')
+	{
+		while (ft_isnum(arg[i]))
+		{
+			contain_deci = TRUE;
+			i++;
+		}
+	}
+	return (is_valid(arg[i], contain_int, contain_deci));
+}
