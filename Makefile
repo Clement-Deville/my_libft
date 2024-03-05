@@ -20,6 +20,11 @@ SRCS_FILES =		ft_memset	\
 					ft_strlcat	\
 					ft_strnstr	\
 					ft_atoi	\
+<<<<<<< HEAD
+=======
+					ft_atof	\
+					is_decimal	\
+>>>>>>> atof
 					ft_calloc	\
 					ft_strdup	\
 					ft_substr	\
@@ -90,7 +95,7 @@ CC_FLAGS = -Wall -Wextra -Werror -g
 
 $(OBJS_DIR)%.o : $(SOURCE_DIR)%.c
 	@mkdir -p $(OBJS_DIR)
-	@clang $(CC_FLAGS) -c $< -o $@
+	@cc $(CC_FLAGS) -c $< -o $@
 
 all: $(NAME)
 

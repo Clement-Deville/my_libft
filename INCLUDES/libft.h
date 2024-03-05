@@ -6,7 +6,7 @@
 /*   By: cdeville <cdeville@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:55:59 by cdeville          #+#    #+#             */
-/*   Updated: 2024/03/05 11:24:25 by cdeville         ###   ########.fr       */
+/*   Updated: 2024/03/05 12:34:14 by cdeville         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,15 @@
 # include <string.h>
 # include <stdlib.h>
 # include <stdarg.h>
+# include <math.h>
+
+typedef int		t_bool;
+
+# define FALSE 0
+# define TRUE 1
+
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
 
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
@@ -39,6 +48,8 @@ void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 int				ft_atoi(const char *nptr);
+double			ft_atof(const char *str);
+t_bool			is_decimal(char *arg);
 void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_strdup(const char *s);
 
@@ -57,13 +68,6 @@ long long		ft_abs(long long number);
 
 # define HEXA_BASE_UP "0123456789ABCDEF"
 # define HEXA_BASE_LOW "0123456789abcdef"
-
-typedef int		t_bool;
-# define FALSE 0
-# define TRUE 1
-
-# define INT_MIN -2147483648
-# define INT_MAX 2147483647
 
 typedef struct s_struct {
 	t_bool	hashtag;
